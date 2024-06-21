@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="bs4/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/jquery.min.js"></script>
+    <title>GRUDS</title>
+  </head>
+  <body>
+    <div class="container cruds">
+      <div class="head">
+        <h2>CRUDS</h2>
+        <p>PRODUCT MANAGEMENT SYSTEM</p>
+      </div>
+      <div class="inputs">
+        <input type="text" id="title" placeholder="Title" />
+        <div class="prices">
+          <input
+            onkeyup="getTotal()"
+            placeholder="Price"
+            type="number"
+            id="price"
+          />
+          <input
+            onkeyup="getTotal()"
+            placeholder="Taxes"
+            type="number"
+            id="taxes"
+          />
+          <input
+            onkeyup="getTotal()"
+            placeholder="Ads"
+            type="number"
+            id="ads"
+          />
+          <input
+            onkeyup="getTotal()"
+            placeholder="Discount"
+            type="number"
+            id="discount"
+          />
+          <small id="total"></small>
+        </div>
+        <input placeholder="Count" type="number" id="count" />
+        <input placeholder="Category" type="text" id="category" />
+        <button id="create">Create</button>
+      </div>
+      <div class="output">
+        <div class="searchblock">
+          <input
+            onkeyup="searchData(this.value)"
+            placeholder="Search"
+            type="text"
+            id="Search"
+          />
+          <div class="search">
+            <button onclick=" getSearchMood(this.id)" id="searchTotal">
+              Search By Title
+            </button>
+            <button onclick=" getSearchMood(this.id)" id="searchCategory">
+              Search By Category
+            </button>
+          </div>
+        </div>
+        <div id="deleteAll"></div>
+        <table>
+          <thead>
+            <tr>
+              <th>id</th>
+              <th>title</th>
+              <th>price</th>
+              <th>taxes</th>
+              <th>ads</th>
+              <th>discount</th>
+              <th>total</th>
+              <th>category</th>
+              <th>update</th>
+              <th>delete</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="js/CRUDS.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="bs4/js/bootstrap.min.js"></script>
+  </body>
+</html>
